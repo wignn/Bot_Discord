@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, ApplicationCommandOptionType, PermissionFlagsBits, EmbedBuilder } = require("discord.js");
+const {  ApplicationCommandOptionType, PermissionFlagsBits, EmbedBuilder } = require("discord.js");
 
 module.exports = {
     deleted: false,

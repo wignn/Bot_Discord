@@ -6,7 +6,6 @@ module.exports = {
   devOnly:true,
   name: 'join',
   description: 'Join a voice channel.',
-  type: 1, 
   options: [
     {
       name: 'channel',
@@ -19,9 +18,9 @@ module.exports = {
 
   async callback(client, interaction) {
     const channelOption = interaction.options.getChannel('channel');
-    console.log(channelOption.id);
-    console.log(channelOption.guild.id);
-    console.log(channelOption.guild);
+    // console.log(channelOption.id);
+    // console.log(channelOption.guild.id);
+    // console.log(channelOption.guild);
 
     if (!channelOption || channelOption.type !== ChannelType.GuildVoice) {
       return interaction.reply({

@@ -1,8 +1,10 @@
-const { devs, testServer } = require('../../../config.json');
 const getLocalCommands = require('../../utils/getLocalCommands');
+require('dotenv').config();
 
 module.exports = async (client, interaction) => {
   if (!interaction.isChatInputCommand()) return;
+  const devs = process.env.ADMIN;
+  const testServer = process.env.TEST_SERVER;
 
   const localCommands = getLocalCommands();
 

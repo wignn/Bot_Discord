@@ -2,6 +2,7 @@ const { SlashCommandBuilder, ApplicationCommandOptionType, PermissionFlagsBits, 
 
 module.exports = {
     deleted: false,
+    devOnly:true,
     name: "purge",
     description: "Hapus sejumlah pesan dari pengguna",
     options: [
@@ -53,10 +54,9 @@ module.exports = {
 
             const reply = await interaction.reply({ embeds: [embed], fetchReply: true });
 
-            // Delete the reply after 5 seconds
             setTimeout(() => {
                 reply.delete().catch(console.error);
-            }, 5000); // Embed akan hilang setelah 5 detik
+            }, 5000); 
 
         } catch (error) {
             console.error("Gagal menghapus pesan:", error);

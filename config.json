@@ -1,5 +1,22 @@
 {
-  "testServer": "1049345075366334617",
-  "clientId": "1051228977068519565",
-  "devs": ["1049343381903515778"]
+  "activity": {
+    "details": "Taking a break",
+    "state": "Relaxing in the moment",
+    "largeImageKey": "https://i.imgur.com/Robzslz.png",
+    "largeImageText": "Relaxation Mode: Activated",
+    "startTimestamp": 1507665886,
+    "smallImageKey": "https://static.wikia.nocookie.net/mrfz/images/e/eb/Babel.png/revision/latest?cb=20210421013433",
+    "smallImageText": "Taking it easy",
+    "partySize": 0,
+    "partyMax": 0,
+    "joinSecret": "https://wignn.github.io/Hello-World/",
+    "snoozeSecret": "https://wignn.github.io/Hello-World/",
+    "instance": true,
+    "buttons": [
+      {
+        "label": "Take a break",
+        "url": "https://wignn.github.io/Hello-World/"
+      }
+    ]
+  }
 }

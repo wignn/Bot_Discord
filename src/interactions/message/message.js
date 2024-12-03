@@ -1,4 +1,4 @@
-const { gpt3, gemini,kana } = require("../../lib/action.js");
+const { gpt3, gemini,kana, bochi, silvia } = require("../../lib/action.js");
 
 module.exports = (client) => {
   client.on("messageCreate", async (arg) => {
@@ -59,6 +59,40 @@ module.exports = (client) => {
             await arg.reply("An error occurred while getting the response from kana");
           }
           break;
+
+        case content.startsWith("?bochi"):
+          const bochiPrompt = content.slice(7).trim();
+          try {
+            const response = await bochi(bochiPrompt);
+            if (!response) {
+              await arg.reply("Failed to get response from bochi");
+              return;
+            }
+            for (let i = 0; i < response.length; i += 2000) {
+              await arg.reply(response.slice(i, i + 2000));
+            }
+          } catch (error) {
+            console.error("Error getting response from bochi:", error);
+            await arg.reply("An error occurred while getting the response from bochi");
+          }
+          break;
+
+          case content.startsWith("?silvia"):
+            const silviaPrompt = content.slice(8).trim();
+            try {
+              const response = await silvia(silviaPrompt);
+              if (!response) {
+                await arg.reply("Failed to get response from silvia");
+                return;
+              }
+              for (let i = 0; i < response.length; i += 2000) {
+                await arg.reply(response.slice(i, i + 2000));
+              }
+            } catch (error) {
+              console.error("Error getting response from silvia:", error);
+              await arg.reply("An error occurred while getting the response from silvia");
+            }
+            break;
       default:
         break;
     }
